@@ -4,7 +4,7 @@ public class Res {
     private String reqId;
     private int code;
     private String msg;
-    private String data;
+    private String data;  //密文转base64
 
     public String getReqId() {
         return reqId;
