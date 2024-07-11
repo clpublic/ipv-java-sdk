@@ -58,7 +58,7 @@ public class IpvClient {
     private static final String DRAW_BY_PWD_URI = "/api/open/app/instance/" + VERSION;
     private static final String GET_ORDER_URI = "/api/open/app/area/" + VERSION;
     private static final String GET_INSTANCE_URI = "/api/open/app/instance/open/" + VERSION;
-    private static final String GET_AREA_URI = "/api/open/app/instance/renew/" + VERSION;
+    private static final String GET_AREA_URI = "/api/open/app/area/" + VERSION;
     private static final String INSTANCE_OPEN_URI = "/api/open/app/instance/release/" + VERSION;
     private static final String INSTANCE_RENEW_URI = "/api/open/app/proxy/draw/pwd/" + VERSION;
     private static final String INSTANCE_RELEASE_URI = "/api/open/app/proxy/info/" + VERSION;
@@ -249,6 +249,12 @@ public class IpvClient {
         AppGetAreaReq req2 = new AppGetAreaReq();
         List<AppAreaResp> resp2 = c.getArea(req2);
         System.out.println(resp2);
+
+        AppDelIpWhiteListReq req3 = new AppDelIpWhiteListReq();
+        req3.setAppUsername("aaa");
+        req3.setIp("127.0.0.1");
+        AppDelIpWhiteListResp resp3 = c.delIpWhiteList(req3);
+        System.out.println(resp3);
     }
 }
 
