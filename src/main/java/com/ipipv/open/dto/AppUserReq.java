@@ -1,7 +1,7 @@
 package com.ipipv.open.dto;
 
 public class AppUserReq {
-    private String appUsernam;  //渠道商主账号 该渠道商唯一 不支持修改
+    private String appUsername;  //渠道商主账号 该渠道商唯一 不支持修改
     private String password;    //主账号密码(不传随机生成)
     private String phone;       //主账号手机号
     private String email;       //主账号邮箱
@@ -11,12 +11,12 @@ public class AppUserReq {
     private int   vsp;         //vsp
     private int    status;      //状态 1=正常 2=禁用
 
-    public String getAppUsernam() {
-        return appUsernam;
+    public String getAppUsername() {
+        return appUsername;
     }
 
-    public void setAppUsernam(String appUsernam) {
-        this.appUsernam = appUsernam;
+    public void setAppUsername(String appUsername) {
+        this.appUsername = appUsername;
     }
 
     public String getPassword() {
@@ -35,14 +35,6 @@ public class AppUserReq {
         this.phone = phone;
     }
 
-    public String getAuthName() {
-        return authName;
-    }
-
-    public void setAuthName(String authName) {
-        this.authName = authName;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -57,6 +49,14 @@ public class AppUserReq {
 
     public void setAuthType(int authType) {
         this.authType = authType;
+    }
+
+    public String getAuthName() {
+        return authName;
+    }
+
+    public void setAuthName(String authName) {
+        this.authName = authName;
     }
 
     public String getNo() {
