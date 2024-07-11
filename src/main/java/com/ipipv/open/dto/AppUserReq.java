@@ -5,11 +5,11 @@ public class AppUserReq {
     private String password;    //主账号密码(不传随机生成)
     private String phone;       //主账号手机号
     private String email;       //主账号邮箱
-    private int    authType;    //认证类型 1=未实名 2=个人实名 3=企业实名
+    private int authType;    //认证类型 1=未实名 2=个人实名 3=企业实名
     private String authName;    //主账号实名认证的真实名字或者企业名
     private String no;          //主账号实名认证的实名证件号码或者企业营业执照号码
-    private int   vsp;         //vsp
-    private int    status;      //状态 1=正常 2=禁用
+    private int vsp;         //vsp
+    private int status;      //状态 1=正常 2=禁用
 
     public String getAppUsername() {
         return appUsername;

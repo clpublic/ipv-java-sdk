@@ -2,12 +2,12 @@ package com.ipipv.open.dto;
 
 public class AppProductAreaResp {
     private String productNo;  //平台产品编号
-    private int    proxyType;  //代理类型
+    private int proxyType;  //代理类型
     private String areaCode;   //区域代码（洲）
     private String countryCode;//国家代码
     private String stateCode;  //州省代码
     private String cityCode;   //城市代码
-    private int    status;     //状态 1=上架 -1=下架
+    private int status;     //状态 1=上架 -1=下架
     private String region;     //上游供应商区域
 
     public String getProductNo() {

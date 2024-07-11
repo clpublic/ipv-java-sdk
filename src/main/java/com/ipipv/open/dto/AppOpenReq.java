@@ -7,11 +7,11 @@ public class AppOpenReq {
     private String appKey;  // appKey
     private String params;  // 根据加密方式密文 转base64
 
-    public AppOpenReq(){
+    public AppOpenReq() {
 
     }
 
-    public AppOpenReq(String reqId,String version,String encrypt,String appKey,String params){
+    public AppOpenReq(String reqId, String version, String encrypt, String appKey, String params) {
         this.appKey = appKey;
         this.encrypt = encrypt;
         this.params = params;

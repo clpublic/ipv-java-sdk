@@ -2,8 +2,8 @@ package com.ipipv.open.dto;
 
 public class AppGetOrderReq {
     private String orderNo;  // 平台订单编号
-    private int    page;     // 页码  默认1
-    private int    pageSize; // 每页显示数量  默认10 最大100
+    private int page;     // 页码  默认1
+    private int pageSize; // 每页显示数量  默认10 最大100
 
     public String getOrderNo() {
         return orderNo;

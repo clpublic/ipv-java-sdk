@@ -75,64 +75,63 @@ public class IpvClient {
     private String appKey;
     private String appSecret;
 
-    public IpvClient(String endPoint , String appKey , String appSecret){
+    public IpvClient(String endPoint, String appKey, String appSecret) {
         this.appKey = appKey;
         this.endPoint = endPoint;
         this.appSecret = appSecret;
     }
 
-    public List<AppProductSyncResp> getProductStock(AppProductSyncReq req) throws Exception{
+    public List<AppProductSyncResp> getProductStock(AppProductSyncReq req) throws Exception {
         byte[] params = JSON.toJSONBytes(req);
-        byte[] res = post(GET_PRODUCT_STOCK_URI,params);
-        List<AppProductSyncResp> list = JSON.parseArray(new String(res),AppProductSyncResp.class);
+        byte[] res = post(GET_PRODUCT_STOCK_URI, params);
+        List<AppProductSyncResp> list = JSON.parseArray(new String(res), AppProductSyncResp.class);
         return list;
     }
 
 
-
-    public AppCreateUserResp createUser(AppUserReq req)throws Exception{
+    public AppCreateUserResp createUser(AppUserReq req) throws Exception {
         byte[] params = JSON.toJSONBytes(req);
-        byte[] res = post(CREATE_USER_URI,params);
-        AppCreateUserResp resp = JSON.parseObject(new String(res),AppCreateUserResp.class);
+        byte[] res = post(CREATE_USER_URI, params);
+        AppCreateUserResp resp = JSON.parseObject(new String(res), AppCreateUserResp.class);
         return resp;
     }
 
-        public AppProxyUserResp createProxyUser(AppProxyUserReq req) throws Exception {
+    public AppProxyUserResp createProxyUser(AppProxyUserReq req) throws Exception {
         byte[] params = JSON.toJSONBytes(req);
         byte[] res = post(CREATE_PROXY_USER_URI, params);
         AppProxyUserResp resp = JSON.parseObject(new String(res), AppProxyUserResp.class);
         return resp;
     }
 
-        public AppAuthUserResp userAuth(AppAuthUserReq req) throws Exception {
+    public AppAuthUserResp userAuth(AppAuthUserReq req) throws Exception {
         byte[] params = JSON.toJSONBytes(req);
         byte[] res = post(USER_AUTH_URI, params);
         AppAuthUserResp resp = JSON.parseObject(new String(res), AppAuthUserResp.class);
         return resp;
     }
 
-        public AppDrawByPwdResp drawByPwd(AppDrawByPwdReq req) throws Exception {
+    public AppDrawByPwdResp drawByPwd(AppDrawByPwdReq req) throws Exception {
         byte[] params = JSON.toJSONBytes(req);
         byte[] res = post(DRAW_BY_PWD_URI, params);
         AppDrawByPwdResp resp = JSON.parseObject(new String(res), AppDrawByPwdResp.class);
         return resp;
     }
 
-        public AppOrderResp getOrder(AppGetOrderReq req) throws Exception {
+    public AppOrderResp getOrder(AppGetOrderReq req) throws Exception {
         byte[] params = JSON.toJSONBytes(req);
         byte[] res = post(GET_ORDER_URI, params);
         AppOrderResp resp = JSON.parseObject(new String(res), AppOrderResp.class);
         return resp;
     }
 
-        public List<AppInstanceResp> getInstance(AppGetInstanceReq req) throws Exception {
+    public List<AppInstanceResp> getInstance(AppGetInstanceReq req) throws Exception {
         byte[] params = JSON.toJSONBytes(req);
         byte[] res = post(GET_INSTANCE_URI, params);
         List<AppInstanceResp> list = JSON.parseArray(new String(res), AppInstanceResp.class);
         return list;
     }
 
-        public List<AppAreaResp> getArea(AppGetAreaReq req) throws Exception {
+    public List<AppAreaResp> getArea(AppGetAreaReq req) throws Exception {
         byte[] params = JSON.toJSONBytes(req);
         byte[] res = post(GET_AREA_URI, params);
         System.out.println(new String(res));
@@ -140,75 +139,75 @@ public class IpvClient {
         return list;
     }
 
-        public AppOrderResp instanceOpen(AppInstanceOpenReq req) throws Exception {
+    public AppOrderResp instanceOpen(AppInstanceOpenReq req) throws Exception {
         byte[] params = JSON.toJSONBytes(req);
         byte[] res = post(INSTANCE_OPEN_URI, params);
         AppOrderResp resp = JSON.parseObject(new String(res), AppOrderResp.class);
         return resp;
     }
 
-        public AppOrderResp instanceRenew(AppInstanceRenewReq req) throws Exception {
+    public AppOrderResp instanceRenew(AppInstanceRenewReq req) throws Exception {
         byte[] params = JSON.toJSONBytes(req);
         byte[] res = post(INSTANCE_RENEW_URI, params);
         AppOrderResp resp = JSON.parseObject(new String(res), AppOrderResp.class);
         return resp;
     }
 
-        public AppInstanceReleaseResp instanceRelease(AppInstanceReleaseReq req) throws Exception {
+    public AppInstanceReleaseResp instanceRelease(AppInstanceReleaseReq req) throws Exception {
         byte[] params = JSON.toJSONBytes(req);
         byte[] res = post(INSTANCE_RELEASE_URI, params);
         AppInstanceReleaseResp resp = JSON.parseObject(new String(res), AppInstanceReleaseResp.class);
         return resp;
     }
 
-        public AppProxyInfoResp proxyInfo(AppProxyInfoReq req) throws Exception {
+    public AppProxyInfoResp proxyInfo(AppProxyInfoReq req) throws Exception {
         byte[] params = JSON.toJSONBytes(req);
         byte[] res = post(PROXY_INFO_URI, params);
         AppProxyInfoResp resp = JSON.parseObject(new String(res), AppProxyInfoResp.class);
         return resp;
     }
 
-        public List<AppProductAreaResp> productAreaList(AppProductAreaReq req) throws Exception {
+    public List<AppProductAreaResp> productAreaList(AppProductAreaReq req) throws Exception {
         byte[] params = JSON.toJSONBytes(req);
         byte[] res = post(GET_PRODUCT_AREA_LIST_URI, params);
         List<AppProductAreaResp> list = JSON.parseArray(new String(res), AppProductAreaResp.class);
         return list;
     }
 
-        public AppAddIpWhiteListResp addIpWhiteList(AppAddIpWhiteListReq req) throws Exception {
+    public AppAddIpWhiteListResp addIpWhiteList(AppAddIpWhiteListReq req) throws Exception {
         byte[] params = JSON.toJSONBytes(req);
         byte[] res = post(ADD_IP_WHITE_LIST_URI, params);
         AppAddIpWhiteListResp resp = JSON.parseObject(new String(res), AppAddIpWhiteListResp.class);
         return resp;
     }
 
-        public AppDelIpWhiteListResp delIpWhiteList(AppDelIpWhiteListReq req) throws Exception {
+    public AppDelIpWhiteListResp delIpWhiteList(AppDelIpWhiteListReq req) throws Exception {
         byte[] params = JSON.toJSONBytes(req);
         byte[] res = post(DEL_IP_WHITE_LIST_URI, params);
         AppDelIpWhiteListResp resp = JSON.parseObject(new String(res), AppDelIpWhiteListResp.class);
         return resp;
     }
 
-        public AppDrawByApiResp drawByApi(AppDrawByApiReq req) throws Exception {
+    public AppDrawByApiResp drawByApi(AppDrawByApiReq req) throws Exception {
         byte[] params = JSON.toJSONBytes(req);
         byte[] res = post(DRAW_BY_API_URI, params);
         AppDrawByApiResp resp = JSON.parseObject(new String(res), AppDrawByApiResp.class);
         return resp;
     }
 
-    private byte[] post(String uri, byte[] data)throws Exception{
+    private byte[] post(String uri, byte[] data) throws Exception {
         byte[] resdata = new byte[0];
         //创建httpclient对象
         CloseableHttpClient client = HttpClients.createDefault();
         //创建post方式请求对象
-        HttpPost httpPost = new HttpPost(endPoint+uri);
+        HttpPost httpPost = new HttpPost(endPoint + uri);
 
-        byte [] key = appSecret.getBytes();
-        byte [] iv = appSecret.substring(0,16).getBytes();
-        byte [] en = AESCBC.encryptCBC(data,key,iv);
+        byte[] key = appSecret.getBytes();
+        byte[] iv = appSecret.substring(0, 16).getBytes();
+        byte[] en = AESCBC.encryptCBC(data, key, iv);
         String msg = Base64.getEncoder().encodeToString(en);
 
-        AppOpenReq req = new AppOpenReq(""+System.currentTimeMillis(),"2.0",ENCRYPT_AES,appKey,msg);
+        AppOpenReq req = new AppOpenReq("" + System.currentTimeMillis(), "2.0", ENCRYPT_AES, appKey, msg);
 
         //装填参数
         StringEntity s = new StringEntity(JSON.toJSONString(req), "utf-8");
@@ -216,7 +215,7 @@ public class IpvClient {
                 "application/json"));
         //设置参数到请求对象中
         httpPost.setEntity(s);
-        System.out.println("请求地址："+endPoint+uri);
+        System.out.println("请求地址：" + endPoint + uri);
         httpPost.setHeader("Content-type", "application/json");
 
         //执行请求操作，并拿到结果（同步阻塞）
@@ -224,12 +223,12 @@ public class IpvClient {
         //获取结果实体
         HttpEntity entity = response.getEntity();
         if (entity != null) {
-            String js = EntityUtils.toString(entity,"utf-8");
+            String js = EntityUtils.toString(entity, "utf-8");
             //System.out.println(js);
             Res res = JSON.parseObject(js, Res.class);
-            if (res.getCode()==200){
+            if (res.getCode() == 200) {
                 byte[] de = Base64.getDecoder().decode(res.getData());
-                resdata = AESCBC.decryptCBC(de,appSecret.getBytes(),iv);
+                resdata = AESCBC.decryptCBC(de, appSecret.getBytes(), iv);
             }
             //按指定编码转换结果实体为String类型
         }
@@ -239,14 +238,17 @@ public class IpvClient {
         return resdata;
     }
 
-    public static void main(String []args) throws Exception {
+    public static void main(String[] args) throws Exception {
         String endPoint = "https://sandbox.ipipv.com";
         String appKey = "AK20240510115408";
         String appSecret = "t84b334e1ghnw8vg7789ib3y2efd8qzb";
-        IpvClient c = new IpvClient(endPoint,appKey,appSecret);
+        IpvClient c = new IpvClient(endPoint, appKey, appSecret);
         AppProductSyncReq req = new AppProductSyncReq();
         List<AppProductSyncResp> resp = c.getProductStock(req);
         System.out.println(JSON.toJSONString(resp));
+        AppGetAreaReq req2 = new AppGetAreaReq();
+        List<AppAreaResp> resp2 = c.getArea(req2);
+        System.out.println(resp2);
     }
 }
 

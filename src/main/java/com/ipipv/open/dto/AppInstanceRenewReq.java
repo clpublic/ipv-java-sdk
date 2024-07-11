@@ -4,7 +4,6 @@ public class AppInstanceRenewReq {
     private String appOrderNo;   //购买者订单号(渠道商订单号)
     private Instance instances;  //实例列表
 
-
     public String getAppOrderNo() {
         return appOrderNo;
     }
