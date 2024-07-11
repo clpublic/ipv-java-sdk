@@ -8,78 +8,78 @@ public class AppUserReq {
     private int    authType;    //认证类型 1=未实名 2=个人实名 3=企业实名
     private String authName;    //主账号实名认证的真实名字或者企业名
     private String no;          //主账号实名认证的实名证件号码或者企业营业执照号码
-    private Unit   vsp;         //vsp
+    private int   vsp;         //vsp
     private int    status;      //状态 1=正常 2=禁用
 
-    public String getappUsernam() {
-    return appUsernam;
+    public String getAppUsernam() {
+        return appUsernam;
     }
-    
-    public void setappUsernam(String appUsernam) {
+
+    public void setAppUsernam(String appUsernam) {
         this.appUsernam = appUsernam;
     }
-    
-    public String getpassword() {
-    return password;
+
+    public String getPassword() {
+        return password;
     }
-    
-    public void setpassword(String password) {
+
+    public void setPassword(String password) {
         this.password = password;
     }
-        
-    public String getphone() {
-    return phone;
+
+    public String getPhone() {
+        return phone;
     }
-    
-    public void setphone(String phone) {
+
+    public void setPhone(String phone) {
         this.phone = phone;
     }
-            
-    public String getemail() {
-    return email;
+
+    public String getAuthName() {
+        return authName;
     }
-    
-    public void setemail(String email) {
-        this.email = email;
-    }
-                
-    public int getauthType() {
-    return authType;
-    }
-    
-    public void setauthType(int authType) {
-        this.authType = authType;
-    }
-                    
-    public String getauthName() {
-    return authName;
-    }
-    
-    public void setauthName(String authName) {
+
+    public void setAuthName(String authName) {
         this.authName = authName;
     }
-                        
-    public String getno() {
-    return no;
+
+    public String getEmail() {
+        return email;
     }
-    
-    public void setno(String no) {
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getAuthType() {
+        return authType;
+    }
+
+    public void setAuthType(int authType) {
+        this.authType = authType;
+    }
+
+    public String getNo() {
+        return no;
+    }
+
+    public void setNo(String no) {
         this.no = no;
     }
-                            
-    public Unit getvsp() {
-    return vsp;
+
+    public int getVsp() {
+        return vsp;
     }
-    
-    public void setvsp(Uint vsp) {
+
+    public void setVsp(int vsp) {
         this.vsp = vsp;
     }
-                                
-    public int getstatus() {
-    return status;
+
+    public int getStatus() {
+        return status;
     }
-    
-    public void setstatus(int status) {
+
+    public void setStatus(int status) {
         this.status = status;
     }
 }

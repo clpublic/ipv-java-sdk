@@ -30,14 +30,6 @@ public class AppProductSyncResp {
     private String supplierCode;   //供应商代码
     private CIDRBlock cidrBlocks;     //支持网段及数量 新增 2024/06/27
 
-    public String getProductNo() {
-        return productNo;
-    }
-
-    public void setProductNo(String productNo) {
-        this.productNo = productNo;
-    }
-
     public String getProductName() {
         return productName;
     }
@@ -60,6 +52,14 @@ public class AppProductSyncResp {
 
     public void setUseType(String useType) {
         this.useType = useType;
+    }
+
+    public String getProductNo() {
+        return productNo;
+    }
+
+    public void setProductNo(String productNo) {
+        this.productNo = productNo;
     }
 
     public String getProtocol() {
@@ -110,6 +110,14 @@ public class AppProductSyncResp {
         this.cityCode = cityCode;
     }
 
+    public String getStateCode() {
+        return stateCode;
+    }
+
+    public void setStateCode(String stateCode) {
+        this.stateCode = stateCode;
+    }
+
     public String getDetail() {
         return detail;
     }
@@ -134,14 +142,6 @@ public class AppProductSyncResp {
         this.inventory = inventory;
     }
 
-    public int getIpType() {
-        return ipType;
-    }
-
-    public void setIpType(int ipType) {
-        this.ipType = ipType;
-    }
-
     public int getIspType() {
         return ispType;
     }
@@ -150,12 +150,12 @@ public class AppProductSyncResp {
         this.ispType = ispType;
     }
 
-    public int getDuration() {
-        return duration;
+    public int getIpType() {
+        return ipType;
     }
 
-    public void setDuration(int duration) {
-        this.duration = duration;
+    public void setIpType(int ipType) {
+        this.ipType = ipType;
     }
 
     public int getUnit() {
@@ -164,6 +164,14 @@ public class AppProductSyncResp {
 
     public void setUnit(int unit) {
         this.unit = unit;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
     }
 
     public int getBandWidth() {
@@ -244,13 +252,5 @@ public class AppProductSyncResp {
 
     public void setCidrBlocks(CIDRBlock cidrBlocks) {
         this.cidrBlocks = cidrBlocks;
-    }
-
-    public String getStateCode() {
-        return stateCode;
-    }
-
-    public void setStateCode(String stateCode) {
-        this.stateCode = stateCode;
     }
 }

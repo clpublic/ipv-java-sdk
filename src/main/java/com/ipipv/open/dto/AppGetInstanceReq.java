@@ -1,13 +1,15 @@
 package com.ipipv.open.dto;
 
-public class AppGetInstanceReq {
-    private String Instances;   //平台实例编号
+import java.util.List;
 
-    public String getInstances() {
+public class AppGetInstanceReq {
+    private List<String> Instances;   //平台实例编号
+
+    public List<String> getInstances() {
         return Instances;
     }
 
-    public void setInstances(String Instances) {
-        this.Instances = Instances;
+    public void setInstances(List<String> instances) {
+        Instances = instances;
     }
 }

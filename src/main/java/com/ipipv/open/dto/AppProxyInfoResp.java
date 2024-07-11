@@ -1,40 +1,42 @@
 package com.ipipv.open.dto;
 
+import java.util.List;
+
 public class AppProxyInfoResp {
     private String used;        //已使用
     private String total;       //总数
     private String balance;     //剩余
-    private String ipWhiteList; //ip白名单
+    private List<String> ipWhiteList; //ip白名单
 
-    public String getused() {
+    public String getUsed() {
         return used;
     }
 
-    public void setused(String used) {
+    public void setUsed(String used) {
         this.used = used;
     }
 
-    public String gettotal() {
+    public String getTotal() {
         return total;
     }
 
-    public void settotal(String total) {
+    public void setTotal(String total) {
         this.total = total;
     }
 
-    public String getbalance() {
+    public String getBalance() {
         return balance;
     }
 
-    public void setbalance(String balance) {
+    public void setBalance(String balance) {
         this.balance = balance;
     }
 
-    public String getipWhiteList() {
+    public List<String> getIpWhiteList() {
         return ipWhiteList;
     }
 
-    public void setipWhiteList(String ipWhiteList) {
+    public void setIpWhiteList(List<String> ipWhiteList) {
         this.ipWhiteList = ipWhiteList;
     }
 }

@@ -5,27 +5,27 @@ public class AppGetOrderReq {
     private int    page;     // 页码  默认1
     private int    pageSize; // 每页显示数量  默认10 最大100
 
-    public String getorderNo() {
+    public String getOrderNo() {
         return orderNo;
     }
 
-    public void setorderNo(String orderNo) {
+    public void setOrderNo(String orderNo) {
         this.orderNo = orderNo;
     }
 
-    public int getpage() {
+    public int getPage() {
         return page;
     }
 
-    public void setpage(int page) {
+    public void setPage(int page) {
         this.page = page;
     }
 
-    public int getpageSize() {
+    public int getPageSize() {
         return pageSize;
     }
 
-    public void setpageSize(int pageSize) {
+    public void setPageSize(int pageSize) {
         this.pageSize = pageSize;
     }
 }

@@ -1,11 +1,14 @@
 package com.ipipv.open.dto;
 
+import java.util.Date;
+import java.util.List;
+
 public class AppInstanceResp {
     private String instanceNo;   //平台实例编号（渠道商续费和释放操作使用该编号）
-    private Uint   proxyType;    //代理类型 101=静态云平台 102=静态国内家庭 103=静态国外家庭 104=动态国外 105=动态国内 201=whatsapp
+    private int   proxyType;    //代理类型 101=静态云平台 102=静态国内家庭 103=静态国外家庭 104=动态国外 105=动态国内 201=whatsapp
     private String protocol;     //协议类型 多个用英文逗号分隔 1=socks5 2=http 3=https 4=ssh
     private String ip;           //代理ip地址
-    private Uint   port;         //代理端口
+    private int   port;         //代理端口
     private String regionId;     //区域地址
     private String countryCode;  //国家代码
     private String cityCode;     //城市代码
@@ -18,176 +21,176 @@ public class AppInstanceResp {
     private float  flowBalance;  //剩余流量
     private int    status;       //1=待创建 2=创建中 3=运行中 6=已停止 10=关闭 11=释放
     private int    renew;        //1 自动续费
-    private String bridges;      //桥地址列表
-    private time.Time openAt;    //开通时间
-    private time.Time renewAt;   //最后成功续费时间
-    private time.Time releaseAt; //释放成功时间
+    private List<String> bridges;      //桥地址列表
+    private Date   openAt;    //开通时间
+    private Date   renewAt;   //最后成功续费时间
+    private Date   releaseAt; //释放成功时间
 
-    public String getinstanceNo() {
+    public String getInstanceNo() {
         return instanceNo;
     }
 
-    public void setinstanceNo(String instanceNo) {
+    public void setInstanceNo(String instanceNo) {
         this.instanceNo = instanceNo;
     }
 
-    public Uint getproxyType() {
+    public int getProxyType() {
         return proxyType;
     }
 
-    public void setproxyType(Uint proxyType) {
+    public void setProxyType(int proxyType) {
         this.proxyType = proxyType;
     }
 
-    public String getprotocol() {
+    public String getProtocol() {
         return protocol;
     }
 
-    public void setprotocol(String protocol) {
+    public void setProtocol(String protocol) {
         this.protocol = protocol;
     }
 
-    public String getip() {
+    public String getIp() {
         return ip;
     }
 
-    public void setip(String ip) {
+    public void setIp(String ip) {
         this.ip = ip;
     }
 
-    public Uint getport() {
-        return port;
-    }
-
-    public void setport(Uint port) {
-        this.port = port;
-    }
-
-    public String getregionId() {
+    public String getRegionId() {
         return regionId;
     }
 
-    public void setregionId(String regionId) {
+    public void setRegionId(String regionId) {
         this.regionId = regionId;
     }
 
-    public String getcountryCode() {
+    public int getPort() {
+        return port;
+    }
+
+    public void setPort(int port) {
+        this.port = port;
+    }
+
+    public String getCountryCode() {
         return countryCode;
     }
 
-    public void setcountryCode(String countryCode) {
+    public void setCountryCode(String countryCode) {
         this.countryCode = countryCode;
     }
 
-    public String getcityCode() {
+    public String getCityCode() {
         return cityCode;
     }
 
-    public void setcityCode(String cityCode) {
+    public void setCityCode(String cityCode) {
         this.cityCode = cityCode;
     }
 
-    public String getuseType() {
+    public String getUseType() {
         return useType;
     }
 
-    public void setuseType(String useType) {
+    public void setUseType(String useType) {
         this.useType = useType;
     }
 
-    public String getusername() {
+    public String getUsername() {
         return username;
     }
 
-    public void setusername(String username) {
+    public void setUsername(String username) {
         this.username = username;
     }
 
-    public String getpwd() {
+    public String getPwd() {
         return pwd;
     }
 
-    public void setpwd(String pwd) {
+    public void setPwd(String pwd) {
         this.pwd = pwd;
     }
 
-    public String getorderNo() {
+    public String getOrderNo() {
         return orderNo;
     }
 
-    public void setorderNo(String orderNo) {
+    public void setOrderNo(String orderNo) {
         this.orderNo = orderNo;
     }
 
-    public int getuserExpired() {
+    public int getUserExpired() {
         return userExpired;
     }
 
-    public void setuserExpired(int userExpired) {
+    public void setUserExpired(int userExpired) {
         this.userExpired = userExpired;
     }
 
-    public float getflowTotal() {
+    public float getFlowTotal() {
         return flowTotal;
     }
 
-    public void setflowTotal(float flowTotal) {
+    public void setFlowTotal(float flowTotal) {
         this.flowTotal = flowTotal;
     }
 
-    public float getflowBalance() {
+    public float getFlowBalance() {
         return flowBalance;
     }
 
-    public void setflowBalance(float flowBalance) {
+    public void setFlowBalance(float flowBalance) {
         this.flowBalance = flowBalance;
     }
 
-    public int getstatus() {
-        return status;
-    }
-
-    public void setstatus(int status) {
-        this.status = status;
-    }
-
-    public int getrenew() {
+    public int getRenew() {
         return renew;
     }
 
-    public void setrenew(int renew) {
+    public void setRenew(int renew) {
         this.renew = renew;
     }
 
-    public String getbridges() {
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public List<String> getBridges() {
         return bridges;
     }
 
-    public void setbridges(String bridges) {
+    public void setBridges(List<String> bridges) {
         this.bridges = bridges;
     }
 
-    public time.Time getopenAt() {
+    public Date getOpenAt() {
         return openAt;
     }
 
-    public void setopenAt(time.Time openAt) {
+    public void setOpenAt(Date openAt) {
         this.openAt = openAt;
     }
 
-    public time.Time getrenewAt() {
+    public Date getRenewAt() {
         return renewAt;
     }
 
-    public void setrenewAt(time.Time renewAt) {
+    public void setRenewAt(Date renewAt) {
         this.renewAt = renewAt;
     }
 
-    public time.Time getreleaseAt() {
+    public Date getReleaseAt() {
         return releaseAt;
     }
 
-    public void setreleaseAt(time.Time releaseAt) {
+    public void setReleaseAt(Date releaseAt) {
         this.releaseAt = releaseAt;
     }
 }

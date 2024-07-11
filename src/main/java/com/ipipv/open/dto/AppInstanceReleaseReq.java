@@ -1,22 +1,24 @@
 package com.ipipv.open.dto;
 
+import java.util.List;
+
 public class AppInstanceReleaseReq {
     private String orderNo;   //购买者订单号(渠道商订单号)
-    private String instances; //平台实例编号
+    private List<String> instances; //平台实例编号
 
-    public String getorderNo() {
+    public String getOrderNo() {
         return orderNo;
     }
 
-    public void setorderNo(String orderNo) {
+    public void setOrderNo(String orderNo) {
         this.orderNo = orderNo;
     }
 
-    public String getinstances() {
+    public List<String> getInstances() {
         return instances;
     }
 
-    public void setinstances(String instances) {
+    public void setInstances(List<String> instances) {
         this.instances = instances;
     }
 }

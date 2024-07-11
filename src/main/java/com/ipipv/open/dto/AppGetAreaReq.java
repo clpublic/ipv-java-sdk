@@ -1,13 +1,15 @@
 package com.ipipv.open.dto;
 
-public class AppGetAreaReq {
-    private String codes;  //获取地域代码对应表，为null获取全部
+import java.util.List;
 
-    public String getcodes() {
+public class AppGetAreaReq {
+    private List<String> codes;  //获取地域代码对应表，为null获取全部
+
+    public List<String> getCodes() {
         return codes;
     }
 
-    public void setcodes(String codes) {
+    public void setCodes(List<String> codes) {
         this.codes = codes;
     }
 }

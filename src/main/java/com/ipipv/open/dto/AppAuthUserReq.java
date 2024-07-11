@@ -8,51 +8,51 @@ public class AppAuthUserReq {
     private String no;          //实名证件号码或者企业营业执照号码
     private String vsp;         //vsp
 
-    public String getusername() {
-    return username;
+    public String getUsername() {
+        return username;
     }
-    
-    public void setusername(String username) {
+
+    public void setUsername(String username) {
         this.username = username;
     }
-    
-    public String getappUsername() {
-    return appUsername;
+
+    public String getAppUsername() {
+        return appUsername;
     }
-    
-    public void setappUsername(String appUsername) {
+
+    public void setAppUsername(String appUsername) {
         this.appUsername = appUsername;
     }
-        
-    public String getauthType() {
-    return authType;
+
+    public int getAuthType() {
+        return authType;
     }
-    
-    public void setauthType(String authType) {
+
+    public void setAuthType(int authType) {
         this.authType = authType;
     }
-            
-    public int getauthName() {
-    return authName;
+
+    public String getAuthName() {
+        return authName;
     }
-    
-    public void setauthName(int authName) {
+
+    public void setAuthName(String authName) {
         this.authName = authName;
     }
-                
-    public int getno() {
-    return no;
+
+    public String getNo() {
+        return no;
     }
-    
-    public void setno(int no) {
+
+    public void setNo(String no) {
         this.no = no;
     }
-                    
-    public int getvsp() {
-    return vsp;
+
+    public String getVsp() {
+        return vsp;
     }
-    
-    public void setvsp(int vsp) {
+
+    public void setVsp(String vsp) {
         this.vsp = vsp;
     }
 }
