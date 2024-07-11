@@ -9,59 +9,59 @@ public class AppProxyUserReq {
     private String remark;          //备注
     private int    status;          //状态 1=正常 2=禁用
 
-    public String getappUsername() {
-    return appUsernam;
+    public String getAppUsernam() {
+        return appUsernam;
     }
-    
-    public void setappUsernam(String appUsernam) {
+
+    public void setAppUsernam(String appUsernam) {
         this.appUsernam = appUsernam;
     }
-    
-    public String getpassword() {
-    return password;
+
+    public String getPassword() {
+        return password;
     }
-    
-    public void setpassword(String password) {
+
+    public void setPassword(String password) {
         this.password = password;
     }
-    
-    public int getlimitFlow() {
-    return limitFlow;
+
+    public int getLimitFlow() {
+        return limitFlow;
     }
-    
-    public void setlimitFlow(int limitFlow) {
+
+    public void setLimitFlow(int limitFlow) {
         this.limitFlow = limitFlow;
     }
-    
-    public String getmainUsername() {
-    return mainUsername;
+
+    public String getAppMainUsername() {
+        return appMainUsername;
     }
-    
-    public void setmainUsername(String mainUsername) {
-        this.mainUsername = mainUsername;
-    }
-        
-    public String getappMainUsername() {
-    return appMainUsername;
-    }
-    
-    public void setappMainUsername(String appMainUsername) {
+
+    public void setAppMainUsername(String appMainUsername) {
         this.appMainUsername = appMainUsername;
     }
-    
-    public int getremark() {
-    return remark;
+
+    public String getMainUsername() {
+        return mainUsername;
     }
-    
-    public void setremark(int remark) {
+
+    public void setMainUsername(String mainUsername) {
+        this.mainUsername = mainUsername;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
         this.remark = remark;
     }
-    
-    public String getstatus() {
-    return status;
+
+    public int getStatus() {
+        return status;
     }
-    
-    public void setstatus(String status) {
+
+    public void setStatus(int status) {
         this.status = status;
     }
 }

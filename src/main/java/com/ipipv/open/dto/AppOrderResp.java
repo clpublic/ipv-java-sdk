@@ -13,91 +13,91 @@ public class AppOrderResp {
     private int    total;      //订单对应实例总数量
     private AppInstanceResp    instances; //订单对应实例列表
 
-    public String getappUsernam() {
-        return appUsernam;
+    public String getOrderNo() {
+        return orderNo;
     }
 
-    public void setappUsernam(String appUsernam) {
-        this.appUsernam = appUsernam;
+    public void setOrderNo(String orderNo) {
+        this.orderNo = orderNo;
     }
-    
-    public String getappOrderNo() {
+
+    public String getAppOrderNo() {
         return appOrderNo;
     }
 
-    public void setappOrderNo(String appOrderNo) {
+    public void setAppOrderNo(String appOrderNo) {
         this.appOrderNo = appOrderNo;
     }
-    
-    public int gettype() {
+
+    public int getType() {
         return type;
     }
 
-    public void settype(int type) {
-        this.apptype = type;
+    public void setType(int type) {
+        this.type = type;
     }
-    
-    public int getstatus() {
+
+    public int getStatus() {
         return status;
     }
 
-    public void setstatus(int status) {
+    public void setStatus(int status) {
         this.status = status;
     }
-    
-    public int getcount() {
+
+    public int getCount() {
         return count;
     }
 
-    public void setcount(int count) {
+    public void setCount(int count) {
         this.count = count;
     }
-    
-    public String getamount() {
+
+    public String getAmount() {
         return amount;
     }
 
-    public void setamount(String amount) {
+    public void setAmount(String amount) {
         this.amount = amount;
     }
-    
-    public int getrefund() {
+
+    public int getRefund() {
         return refund;
     }
 
-    public void setrefund(int refund) {
+    public void setRefund(int refund) {
         this.refund = refund;
     }
-    
-    public int getpage() {
+
+    public int getPage() {
         return page;
     }
 
-    public void setpage(int page) {
+    public void setPage(int page) {
         this.page = page;
     }
-    
-    public int getpageSize() {
+
+    public int getPageSize() {
         return pageSize;
     }
 
-    public void setpageSize(int pageSize) {
+    public void setPageSize(int pageSize) {
         this.pageSize = pageSize;
     }
-    
-    public int gettotal() {
+
+    public int getTotal() {
         return total;
     }
 
-    public void settotal(int total) {
+    public void setTotal(int total) {
         this.total = total;
     }
-    
-    public AppInstanceResp getinstances() {
+
+    public AppInstanceResp getInstances() {
         return instances;
     }
 
-    public void setinstances(AppInstanceResp instances) {
+    public void setInstances(AppInstanceResp instances) {
         this.instances = instances;
     }
 }

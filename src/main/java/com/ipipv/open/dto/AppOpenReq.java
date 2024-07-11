@@ -43,19 +43,19 @@ public class AppOpenReq {
         this.encrypt = encrypt;
     }
 
-    public String getAppKey() {
-        return appKey;
-    }
-
-    public void setAppKey(String appKey) {
-        this.appKey = appKey;
-    }
-
     public String getParams() {
         return params;
     }
 
     public void setParams(String params) {
         this.params = params;
+    }
+
+    public String getAppKey() {
+        return appKey;
+    }
+
+    public void setAppKey(String appKey) {
+        this.appKey = appKey;
     }
 }

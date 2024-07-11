@@ -5,27 +5,27 @@ public class AppInstanceReleaseResp {
     private String appOrderNo; //购买者订单号(渠道商订单号) 原样返回
     private String amount;     //花费金额
 
-    public String getorderNo() {
+    public String getOrderNo() {
         return orderNo;
     }
 
-    public void setorderNo(String orderNo) {
+    public void setOrderNo(String orderNo) {
         this.orderNo = orderNo;
     }
 
-    public int getappOrderNo() {
+    public String getAppOrderNo() {
         return appOrderNo;
     }
 
-    public void setappOrderNo(int appOrderNo) {
+    public void setAppOrderNo(String appOrderNo) {
         this.appOrderNo = appOrderNo;
     }
 
-    public int getamount() {
+    public String getAmount() {
         return amount;
     }
 
-    public void setamount(int amount) {
+    public void setAmount(String amount) {
         this.amount = amount;
     }
 }

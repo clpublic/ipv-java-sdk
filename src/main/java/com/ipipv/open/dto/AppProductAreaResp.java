@@ -10,67 +10,67 @@ public class AppProductAreaResp {
     private int    status;     //状态 1=上架 -1=下架
     private String region;     //上游供应商区域
 
-    public String getproductNo() {
-    return productNo;
+    public String getProductNo() {
+        return productNo;
     }
-    
-    public void setproductNo(String productNo) {
+
+    public void setProductNo(String productNo) {
         this.productNo = productNo;
     }
-    
-    public int getproxyType() {
-    return proxyType;
+
+    public int getProxyType() {
+        return proxyType;
     }
-    
-    public void setproxyType(int proxyType) {
+
+    public void setProxyType(int proxyType) {
         this.proxyType = proxyType;
     }
-        
-    public String getareaCode() {
-    return areaCode;
+
+    public String getAreaCode() {
+        return areaCode;
     }
-    
-    public void setareaCode(String areaCode) {
+
+    public void setAreaCode(String areaCode) {
         this.areaCode = areaCode;
     }
-            
-    public String getcountryCode() {
-    return countryCode;
+
+    public String getCountryCode() {
+        return countryCode;
     }
-    
-    public void setcountryCode(String countryCode) {
+
+    public void setCountryCode(String countryCode) {
         this.countryCode = countryCode;
     }
-                
-    public String getstateCode() {
-    return stateCode;
+
+    public String getCityCode() {
+        return cityCode;
     }
-    
-    public void setstateCode(String stateCode) {
-        this.stateCode = stateCode;
-    }
-                    
-    public String getcityCode() {
-    return cityCode;
-    }
-    
-    public void setcityCode(String cityCode) {
+
+    public void setCityCode(String cityCode) {
         this.cityCode = cityCode;
     }
-                        
-    public int getstatus() {
-    return status;
+
+    public String getStateCode() {
+        return stateCode;
     }
-    
-    public void setstatus(int status) {
+
+    public void setStateCode(String stateCode) {
+        this.stateCode = stateCode;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
         this.status = status;
     }
-                           
-    public String getregion() {
-    return region;
+
+    public String getRegion() {
+        return region;
     }
-    
-    public void setregion(String region) {
+
+    public void setRegion(String region) {
         this.region = region;
     }
 }

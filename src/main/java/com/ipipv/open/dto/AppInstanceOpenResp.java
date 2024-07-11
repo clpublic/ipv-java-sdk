@@ -5,27 +5,27 @@ public class AppInstanceOpenResp {
     private String appOrderNo; //购买者订单号(渠道商订单号) 原样返回
     private String amount;     //花费金额
 
-    public String getorderNo() {
-    return orderNo;
+    public String getOrderNo() {
+        return orderNo;
     }
-    
-    public void setorderNo(String orderNo) {
+
+    public void setOrderNo(String orderNo) {
         this.orderNo = orderNo;
     }
-    
-        public String getappOrderNo() {
-    return appOrderNo;
+
+    public String getAppOrderNo() {
+        return appOrderNo;
     }
-    
-    public void setappOrderNo(String appOrderNo) {
+
+    public void setAppOrderNo(String appOrderNo) {
         this.appOrderNo = appOrderNo;
     }
 
-    public int getamount() {
-    return amount;
+    public String getAmount() {
+        return amount;
     }
-    
-    public void setamount(int amount) {
+
+    public void setAmount(String amount) {
         this.amount = amount;
     }
 }
