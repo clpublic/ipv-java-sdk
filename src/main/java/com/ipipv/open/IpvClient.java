@@ -32,6 +32,7 @@ import com.ipipv.open.dto.AppProxyUserReq;
 import com.ipipv.open.dto.AppProxyUserResp;
 import com.ipipv.open.dto.AppUserReq;
 import com.ipipv.open.dto.Res;
+import com.ipipv.open.dto.*;
 import com.ipipv.open.utils.AESCBC;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -67,6 +68,7 @@ public class IpvClient {
     private static final String DEL_IP_WHITE_LIST_URI = "/api/open/app/proxy/delIpWhiteList/" + VERSION;
     private static final String DRAW_BY_API_URI = "/api/open/app/proxy/draw/api/" + VERSION;
 
+
     public static final String ENCRYPT_AES = "AES";
 
     private String endPoint;
@@ -86,7 +88,9 @@ public class IpvClient {
         return list;
     }
 
-        public AppCreateUserResp createUser(AppUserReq req)throws Exception{
+
+
+    public AppCreateUserResp createUser(AppUserReq req)throws Exception{
         byte[] params = JSON.toJSONBytes(req);
         byte[] res = post(CREATE_USER_URI,params);
         AppCreateUserResp resp = JSON.parseObject(new String(res),AppCreateUserResp.class);

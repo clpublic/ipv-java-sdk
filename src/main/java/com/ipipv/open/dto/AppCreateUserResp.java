@@ -4,8 +4,8 @@ public class AppCreateUserResp {
     private String appUsername;  //渠道商主账号
     private String username;    //平台主账号
     private String password;    //主账号密码
-    private int    status;      //用户状态 1=正常 2=禁用
-    private int    authStatus;  //认证状态 1=未实名 2=个人实名 3=企业实名
+    private int status;      //用户状态 1=正常 2=禁用
+    private int authStatus;  //认证状态 1=未实名 2=个人实名 3=企业实名
 
     public String getAppUsername() {
         return appUsername;
