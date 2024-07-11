@@ -1,10 +1,7 @@
 package com.ipipv.open;
 
 import com.alibaba.fastjson.JSON;
-import com.ipipv.open.dto.AppOpenReq;
-import com.ipipv.open.dto.AppProductSyncReq;
-import com.ipipv.open.dto.AppProductSyncResp;
-import com.ipipv.open.dto.Res;
+import com.ipipv.open.dto.*;
 import com.ipipv.open.utils.AESCBC;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -24,6 +21,7 @@ import java.util.List;
 public class IpvClient {
     private static final String VERSION = "v2";
     private static final String GET_PRODUCT_STOCK_URI = "/api/open/app/product/query/" + VERSION;
+    private static final String CREATE_USER_URI = "/api/open/app/user/" + VERSION;
 
     public static final String ENCRYPT_AES = "AES";
 
@@ -42,6 +40,13 @@ public class IpvClient {
         byte[] res = post(GET_PRODUCT_STOCK_URI,params);
         List<AppProductSyncResp> list = JSON.parseArray(new String(res),AppProductSyncResp.class);
         return list;
+    }
+
+    public AppCreateUserResp createUser(AppUserReq req)throws Exception{
+        byte[] params = JSON.toJSONBytes(req);
+        byte[] res = post(CREATE_USER_URI,params);
+        AppCreateUserResp resp = JSON.parseObject(new String(res),AppCreateUserResp.class);
+        return resp;
     }
 
     private byte[] post(String uri, byte[] data)throws Exception{
