@@ -14,7 +14,7 @@ public class OpenParam {
     private int extBandWidth;//额外增加带宽 单位Mbps
     private String appUsername;//渠道商主账号，开通动态代理的时候必填(必须在平台上注册过)
     private int flow;          //动态流量 最大102400MB 动态必填 单位MB
-    private int useBridge;     //1=使用桥 2=不使用桥 3=随app设置 默认3
+    private int useBridge;     //1=不上桥 2=上桥 默认0随app设置
     private CIDRBlock cidrBlocks; //静态购买所在网段及数量（产品有的才支持）
     private String projectId;  //购买项目id,保留字段，后续会支持
 
