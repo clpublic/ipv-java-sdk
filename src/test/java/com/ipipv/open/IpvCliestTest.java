@@ -1,5 +1,6 @@
 package com.ipipv.open;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -7,8 +8,11 @@ import org.junit.jupiter.api.Test;
 
 import com.ipipv.open.dto.AppAreaResp;
 import com.ipipv.open.dto.AppGetAreaReq;
+import com.ipipv.open.dto.AppInstanceOpenReq;
+import com.ipipv.open.dto.AppOrderResp;
 import com.ipipv.open.dto.AppProductSyncReq;
 import com.ipipv.open.dto.AppProductSyncResp;
+import com.ipipv.open.dto.OpenParam;
 import com.ipipv.open.dto.AppDelIpWhiteListReq;
 import com.ipipv.open.dto.AppDelIpWhiteListResp;
 
@@ -46,4 +50,22 @@ public class IpvCliestTest {
         AppDelIpWhiteListResp resp3 = ipv.delIpWhiteList(req3);
         System.out.println(resp3);
     }
+
+    @Test
+    void testInstanceOpen() throws Exception{
+        AppInstanceOpenReq req = new AppInstanceOpenReq();
+        req.setAppOrderNo(Tool.getOrder());
+        List<OpenParam> params =new ArrayList<>();
+        OpenParam param = new OpenParam();
+        param.setCount(1);
+        param.setProductNo("ali_460");
+        params.add(param);
+        req.setParams(params);
+
+        AppOrderResp resp = ipv.instanceOpen(req);
+        System.out.println(resp);
+    }
+
+
+    
 }
