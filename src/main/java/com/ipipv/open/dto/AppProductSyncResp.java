@@ -1,5 +1,7 @@
 package com.ipipv.open.dto;
 
+import java.util.List;
+
 public class AppProductSyncResp {
     private String productNo;//必要，产品Id 保持唯一
     private String productName; //必要,商品名
@@ -28,7 +30,7 @@ public class AppProductSyncResp {
     private float memory;         //内存容量
     private int enable;         //是否可以购买 1可以
     private String supplierCode;   //供应商代码
-    private CIDRBlock cidrBlocks;     //支持网段及数量 新增 2024/06/27
+    private List<CIDRBlock> cidrBlocks;     //支持网段及数量 新增 2024/06/27
 
     public String getProductName() {
         return productName;
@@ -246,11 +248,11 @@ public class AppProductSyncResp {
         this.supplierCode = supplierCode;
     }
 
-    public CIDRBlock getCidrBlocks() {
+    public List<CIDRBlock> getCidrBlocks() {
         return cidrBlocks;
     }
 
-    public void setCidrBlocks(CIDRBlock cidrBlocks) {
+    public void setCidrBlocks(List<CIDRBlock> cidrBlocks) {
         this.cidrBlocks = cidrBlocks;
     }
 }

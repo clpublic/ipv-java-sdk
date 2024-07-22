@@ -1,13 +1,15 @@
 package com.ipipv.open.dto;
 
-public class AppDrawByApiResp {
-    private AppDrawByApiItem list;
+import java.util.*;
 
-    public AppDrawByApiItem getList() {
+public class AppDrawByApiResp {
+    private List<AppDrawByApiItem> list;
+
+    public List<AppDrawByApiItem> getList() {
         return list;
     }
 
-    public void setList(AppDrawByApiItem list) {
+    public void setList(List<AppDrawByApiItem> list) {
         this.list = list;
     }
 }

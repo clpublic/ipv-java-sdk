@@ -1,13 +1,15 @@
 package com.ipipv.open.dto;
 
-public class AppAddIpWhiteListResp {
-    private String ipWhiteList;  //ip白名单
+import java.util.*;
 
-    public String getIpWhiteList() {
+public class AppAddIpWhiteListResp {
+    private List<String> ipWhiteList;  //ip白名单
+
+    public List<String> getIpWhiteList() {
         return ipWhiteList;
     }
 
-    public void setIpWhiteList(String ipWhiteList) {
+    public void setIpWhiteList(List<String> ipWhiteList) {
         this.ipWhiteList = ipWhiteList;
     }
 }
