@@ -1,5 +1,7 @@
 package com.ipipv.open.dto;
 
+import java.util.List;
+
 public class OpenParam {
     private String productNo;   //商品编号（如果存在，后面6项无意义）
     private int proxyType;   //代理类型 101=静态云平台 102=静态国内家庭 103=静态国外家庭 104=动态国外 105=动态国内 201=whatsapp
@@ -15,7 +17,7 @@ public class OpenParam {
     private String appUsername;//渠道商主账号，开通动态代理的时候必填(必须在平台上注册过)
     private int flow;          //动态流量 最大102400MB 动态必填 单位MB
     private int useBridge;     //1=不上桥 2=上桥 默认0随app设置
-    private CIDRBlock cidrBlocks; //静态购买所在网段及数量（产品有的才支持）
+    private List<CIDRBlock> cidrBlocks; //静态购买所在网段及数量（产品有的才支持）
     private String projectId;  //购买项目id,保留字段，后续会支持
 
     public String getProductNo() {
@@ -42,20 +44,20 @@ public class OpenParam {
         this.countryCode = countryCode;
     }
 
-    public String getSupplierCode() {
-        return supplierCode;
-    }
-
-    public void setSupplierCode(String supplierCode) {
-        this.supplierCode = supplierCode;
-    }
-
     public String getCityCode() {
         return cityCode;
     }
 
     public void setCityCode(String cityCode) {
         this.cityCode = cityCode;
+    }
+
+    public String getSupplierCode() {
+        return supplierCode;
+    }
+
+    public void setSupplierCode(String supplierCode) {
+        this.supplierCode = supplierCode;
     }
 
     public int getUnit() {
@@ -130,11 +132,11 @@ public class OpenParam {
         this.useBridge = useBridge;
     }
 
-    public CIDRBlock getCidrBlocks() {
+    public List<CIDRBlock> getCidrBlocks() {
         return cidrBlocks;
     }
 
-    public void setCidrBlocks(CIDRBlock cidrBlocks) {
+    public void setCidrBlocks(List<CIDRBlock> cidrBlocks) {
         this.cidrBlocks = cidrBlocks;
     }
 
