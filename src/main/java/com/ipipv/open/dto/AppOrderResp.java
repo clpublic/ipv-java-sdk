@@ -1,5 +1,7 @@
 package com.ipipv.open.dto;
 
+import java.util.*;
+
 public class AppOrderResp {
     private String orderNo;    //平台订单号
     private String appOrderNo; //渠道商（购买订单）订单号
@@ -11,7 +13,7 @@ public class AppOrderResp {
     private int page;       //页码 原样返回
     private int pageSize;   //每页显示数量  原样返回
     private int total;      //订单对应实例总数量
-    private AppInstanceResp instances; //订单对应实例列表
+    private List<AppInstanceResp> instances; //订单对应实例列表
 
     public String getOrderNo() {
         return orderNo;
@@ -93,11 +95,11 @@ public class AppOrderResp {
         this.total = total;
     }
 
-    public AppInstanceResp getInstances() {
+    public List<AppInstanceResp> getInstances() {
         return instances;
     }
 
-    public void setInstances(AppInstanceResp instances) {
+    public void setInstances(List<AppInstanceResp> instances) {
         this.instances = instances;
     }
 }
