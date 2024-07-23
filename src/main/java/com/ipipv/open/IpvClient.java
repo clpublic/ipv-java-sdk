@@ -215,29 +215,6 @@ public class IpvClient {
         return resdata;
     }
 
-    public List<AppAuthUserResp> AuthUser(AppAuthUserReq req) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'AuthUser'");
-    }
-
-    // public static void main(String[] args) throws Exception {
-    //     String endPoint = "https://sandbox.ipipv.com";
-    //     String appKey = "AK20240708150154";
-    //     String appSecret = "xx1vsogzzvqvrgml7f6sc233p8vdqev2";
-    //     IpvClient c = new IpvClient(endPoint, appKey, appSecret);
-    //     AppProductSyncReq req = new AppProductSyncReq();
-    //     List<AppProductSyncResp> resp = c.getProductStock(req);
-    //     System.out.println(JSON.toJSONString(resp));
-    //     AppGetAreaReq req2 = new AppGetAreaReq();
-    //     List<AppAreaResp> resp2 = c.getArea(req2);
-    //     System.out.println(resp2);
-
-    //     AppDelIpWhiteListReq req3 = new AppDelIpWhiteListReq();
-    //     req3.setAppUsername("aaa");
-    //     req3.setIp("127.0.0.1");
-    //     AppDelIpWhiteListResp resp3 = c.delIpWhiteList(req3);
-    //     System.out.println(resp3);
-    // }
 }
 
 
