@@ -1,11 +1,11 @@
 package com.ipipv.open.dto;
 
 public class AppFlowUseLogReq {
-    private String appUsername;  //渠道商主账号 必要
-    private String startTime;    //开始时间 可选 默认7天前 格式 2021-01-01 00:00:00
-    private String endTime;          //结束时间 可选当天 格式 2021-01-01 00:00:00
-    private int page;    //页码 可选 默认1
-    private int pageSize; //每页数量 可选 默认10 最大100
+    private String appUsername; // 渠道商主账号 必要
+    private String startTime; // 开始时间 可选 默认7天前 格式 2021-01-01 00:00:00
+    private String endTime; // 结束时间 可选当天 格式 2021-01-01 00:00:00
+    private int page; // 页码 可选 默认1
+    private int pageSize; // 每页数量 可选 默认10 最大100
 
     public String getAppUsername() {
         return appUsername;

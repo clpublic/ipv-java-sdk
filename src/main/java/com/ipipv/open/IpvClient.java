@@ -1,37 +1,6 @@
 package com.ipipv.open;
 
 import com.alibaba.fastjson.JSON;
-import com.ipipv.open.dto.AppAddIpWhiteListReq;
-import com.ipipv.open.dto.AppAddIpWhiteListResp;
-import com.ipipv.open.dto.AppAreaResp;
-import com.ipipv.open.dto.AppAuthUserReq;
-import com.ipipv.open.dto.AppAuthUserResp;
-import com.ipipv.open.dto.AppCreateUserResp;
-import com.ipipv.open.dto.AppDelIpWhiteListReq;
-import com.ipipv.open.dto.AppDrawByApiReq;
-import com.ipipv.open.dto.AppDrawByApiResp;
-import com.ipipv.open.dto.AppDrawByPwdReq;
-import com.ipipv.open.dto.AppDrawByPwdResp;
-import com.ipipv.open.dto.AppGetAreaReq;
-import com.ipipv.open.dto.AppGetInstanceReq;
-import com.ipipv.open.dto.AppGetOrderReq;
-import com.ipipv.open.dto.AppInstanceOpenReq;
-import com.ipipv.open.dto.AppInstanceReleaseReq;
-import com.ipipv.open.dto.AppInstanceReleaseResp;
-import com.ipipv.open.dto.AppInstanceRenewReq;
-import com.ipipv.open.dto.AppInstanceResp;
-import com.ipipv.open.dto.AppOpenReq;
-import com.ipipv.open.dto.AppOrderResp;
-import com.ipipv.open.dto.AppProductAreaReq;
-import com.ipipv.open.dto.AppProductAreaResp;
-import com.ipipv.open.dto.AppProductSyncReq;
-import com.ipipv.open.dto.AppProductSyncResp;
-import com.ipipv.open.dto.AppProxyInfoReq;
-import com.ipipv.open.dto.AppProxyInfoResp;
-import com.ipipv.open.dto.AppProxyUserReq;
-import com.ipipv.open.dto.AppProxyUserResp;
-import com.ipipv.open.dto.AppUserReq;
-import com.ipipv.open.dto.Res;
 import com.ipipv.open.dto.*;
 import com.ipipv.open.utils.AESCBC;
 import org.apache.http.HttpEntity;
@@ -67,7 +36,8 @@ public class IpvClient {
     private static final String ADD_IP_WHITE_LIST_URI = "/api/open/app/proxy/addIpWhiteList/" + VERSION;
     private static final String DEL_IP_WHITE_LIST_URI = "/api/open/app/proxy/delIpWhiteList/" + VERSION;
     private static final String DRAW_BY_API_URI = "/api/open/app/proxy/draw/api/" + VERSION;
-
+    private static final String PROXY_FLOW_USE_LOG_URI = "/api/open/app/proxy/flow/use/log/" + VERSION;
+ 
 
     public static final String ENCRYPT_AES = "AES";
 
@@ -195,6 +165,13 @@ public class IpvClient {
         return resp;
     }
 
+    public AppFlowUseLogResp proxyFlowUseLog(AppFlowUseLogReq req) throws Exception {
+        byte[] params = JSON.toJSONBytes(req);
+        byte[] res = post(PROXY_FLOW_USE_LOG_URI, params);
+        AppFlowUseLogResp resp = JSON.parseObject(new String(res), AppFlowUseLogResp.class);
+        return resp;
+    }
+
     private byte[] post(String uri, byte[] data) throws Exception {
         byte[] resdata = new byte[0];
         //创建httpclient对象
@@ -236,6 +213,11 @@ public class IpvClient {
         //释放链接
         response.close();
         return resdata;
+    }
+
+    public List<AppAuthUserResp> AuthUser(AppAuthUserReq req) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'AuthUser'");
     }
 
     // public static void main(String[] args) throws Exception {
