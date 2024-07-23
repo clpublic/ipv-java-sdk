@@ -1,5 +1,9 @@
 package com.ipipv.open;
 
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -103,6 +107,8 @@ public class IpvCliestTest {
     @Test
     void testUserAuth() throws Exception {
         AppAuthUserReq req = new AppAuthUserReq();
+        req.setUsername("abab");
+        req.setAuthType(1);
         AppAuthUserResp resp = ipv.userAuth(req);
         System.out.println(resp);
     }
@@ -110,6 +116,13 @@ public class IpvCliestTest {
     @Test
     void testcreateUser() throws Exception{
         AppUserReq req = new AppUserReq();
+        req.setAppUsername("abab123");
+        req.setPassword("abab");
+        req.setPhone("111111");
+        req.setEmail("123456@.com");
+        req.setAuthType(1);
+        req.setNo("abc12345");
+        req.setStatus(1);
         AppCreateUserResp resp = ipv.createUser(req);
         System.out.println(resp);
     }
@@ -117,6 +130,10 @@ public class IpvCliestTest {
     @Test
     void testDrawByApi() throws Exception {
         AppDrawByApiReq req = new AppDrawByApiReq();
+        req.setAppUsername("abab123");
+        req.setProxyType(104);
+        req.setAddressCode("cityCode");
+        req.setMaxFlowLimit(50);
         AppDrawByApiResp resp = ipv.drawByApi(req);
         System.out.println(resp);
     }
@@ -124,6 +141,10 @@ public class IpvCliestTest {
     @Test
     void testDrawByPwd() throws Exception {
         AppDrawByPwdReq req = new AppDrawByPwdReq();
+        req.setAppUsername("abab123");
+        req.setAddressCode("cityCode");
+        req.setProxyType(104);
+        req.setMaxFlowLimit(50);
         AppDrawByPwdResp resp = ipv.drawByPwd(req);
         System.out.println(resp);
     }
@@ -131,6 +152,8 @@ public class IpvCliestTest {
     @Test
     void testProxyFlowUseLog() throws Exception {
         AppFlowUseLogReq req = new AppFlowUseLogReq();
+        req.setAppUsername("abab123");
+        req.setEndTime("2024-07-20 15:30:10");
         AppFlowUseLogResp resp = ipv.proxyFlowUseLog(req);
         System.out.println(resp);
     }
@@ -138,6 +161,7 @@ public class IpvCliestTest {
     @Test
     void testgetInstance() throws Exception {
         AppGetInstanceReq req = new AppGetInstanceReq();
+        req.setInstances(null);
         List<AppInstanceResp> resp = ipv.getInstance(req);
         System.out.println(resp);
     }
@@ -145,6 +169,7 @@ public class IpvCliestTest {
     @Test
     void testInstanceRenew() throws Exception {
         AppInstanceOpenReq req = new AppInstanceOpenReq();
+        req.setAppOrderNo("01");
         AppOrderResp resp = ipv.instanceOpen(req);
         System.out.println(resp);
     }
@@ -152,6 +177,7 @@ public class IpvCliestTest {
     @Test 
     void testGetOrder() throws Exception{
         AppGetOrderReq req = new AppGetOrderReq();
+        req.setOrderNo("1234");
         AppOrderResp resp = ipv.getOrder(req);
         System.out.println(resp);
     }
@@ -159,6 +185,8 @@ public class IpvCliestTest {
     @Test
     void testinstanceRelease() throws Exception{
         AppInstanceReleaseReq req = new AppInstanceReleaseReq();
+        req.setOrderNo("1234");
+        req.setInstances(null);
         AppInstanceReleaseResp resp = ipv.instanceRelease(req);
         System.out.println(resp);
     }
@@ -166,6 +194,8 @@ public class IpvCliestTest {
     @Test
     void testproductAreaList() throws Exception{
         AppProductAreaReq req = new AppProductAreaReq();
+        req.setProductNo("a123456");
+        req.setProxyType(104);
         List<AppProductAreaResp> resp = ipv.productAreaList(req);
         System.out.println(resp);
     }
@@ -173,6 +203,8 @@ public class IpvCliestTest {
     @Test
     void testproxyInfo() throws Exception{
         AppProxyInfoReq req = new AppProxyInfoReq();
+        req.setUsername("abab");
+        req.setProxyType(104);
         AppProxyInfoResp resp = ipv.proxyInfo(req);
         System.out.println(resp);
     }
@@ -180,6 +212,9 @@ public class IpvCliestTest {
     @Test
     void testcreateProxyUser() throws Exception{
         AppProxyUserReq req = new AppProxyUserReq();
+        req.setLimitFlow(1000);
+        req.setMainUsername("abab");
+        req.setStatus(1);
         AppProxyUserResp resp = ipv.createProxyUser(req);
         System.out.println(resp);
     }
