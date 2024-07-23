@@ -3,8 +3,8 @@ package com.ipipv.open.dto;
 import java.util.List;
 
 public class AppFlowUseLogResp {
-    private List<AppFlowUseLogItem> list;          //结束时间 可选当天 格式 2021-01-01 00:00:00
-    private int total;    // 总数量
+    private List<AppFlowUseLogItem> list; // 结束时间 可选当天 格式 2021-01-01 00:00:00
+    private int total; // 总数量
     private int curPage; // 当前页
 
     public List<AppFlowUseLogItem> getList() {
