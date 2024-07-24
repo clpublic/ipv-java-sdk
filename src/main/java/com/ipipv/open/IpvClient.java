@@ -20,6 +20,7 @@ import java.util.List;
 
 public class IpvClient {
     private static final String VERSION = "v2";
+    private static final String GET_APP_INFO_URI = "/api/open/app/info/" + VERSION;
     private static final String GET_PRODUCT_STOCK_URI = "/api/open/app/product/query/" + VERSION;
     private static final String CREATE_USER_URI = "/api/open/app/user/" + VERSION;
     private static final String CREATE_PROXY_USER_URI = "/api/open/app/proxy/user/" + VERSION;
@@ -49,6 +50,12 @@ public class IpvClient {
         this.appKey = appKey;
         this.endPoint = endPoint;
         this.appSecret = appSecret;
+    }
+
+    public AppInfoResp getAppInfo() throws Exception {
+        byte[] res = post(GET_APP_INFO_URI, null);
+        AppInfoResp list = JSON.parseObject(new String(res), AppInfoResp.class);
+        return list;
     }
 
     public List<AppProductSyncResp> getProductStock(AppProductSyncReq req) throws Exception {
@@ -178,12 +185,13 @@ public class IpvClient {
         CloseableHttpClient client = HttpClients.createDefault();
         //创建post方式请求对象
         HttpPost httpPost = new HttpPost(endPoint + uri);
-
-        byte[] key = appSecret.getBytes();
         byte[] iv = appSecret.substring(0, 16).getBytes();
-        byte[] en = AESCBC.encryptCBC(data, key, iv);
-        String msg = Base64.getEncoder().encodeToString(en);
-
+        String msg = "";
+        if (data !=null && data.length>0){
+            byte[] key = appSecret.getBytes();
+            byte[] en = AESCBC.encryptCBC(data, key, iv);
+            msg = Base64.getEncoder().encodeToString(en);
+        }
         AppOpenReq req = new AppOpenReq("" + System.currentTimeMillis(), "2.0", ENCRYPT_AES, appKey, msg);
 
         //装填参数

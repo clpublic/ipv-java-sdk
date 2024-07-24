@@ -1,8 +1,5 @@
 package com.ipipv.open;
 
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,38 +7,7 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.ipipv.open.dto.AppAreaResp;
-import com.ipipv.open.dto.AppGetAreaReq;
-import com.ipipv.open.dto.AppInstanceOpenReq;
-import com.ipipv.open.dto.AppOrderResp;
-import com.ipipv.open.dto.AppProductSyncReq;
-import com.ipipv.open.dto.AppProductSyncResp;
-import com.ipipv.open.dto.OpenParam;
-import com.ipipv.open.dto.AppDelIpWhiteListReq;
-import com.ipipv.open.dto.AppDelIpWhiteListResp;
-import com.ipipv.open.dto.AppAddIpWhiteListReq;
-import com.ipipv.open.dto.AppAddIpWhiteListResp;
-import com.ipipv.open.dto.AppAuthUserReq;
-import com.ipipv.open.dto.AppAuthUserResp;
-import com.ipipv.open.dto.AppCreateUserResp;
-import com.ipipv.open.dto.AppDrawByApiReq;
-import com.ipipv.open.dto.AppDrawByApiResp;
-import com.ipipv.open.dto.AppDrawByPwdReq;
-import com.ipipv.open.dto.AppDrawByPwdResp;
-import com.ipipv.open.dto.AppFlowUseLogReq;
-import com.ipipv.open.dto.AppFlowUseLogResp;
-import com.ipipv.open.dto.AppGetInstanceReq;
-import com.ipipv.open.dto.AppGetOrderReq;
-import com.ipipv.open.dto.AppInstanceReleaseReq;
-import com.ipipv.open.dto.AppInstanceReleaseResp;
-import com.ipipv.open.dto.AppInstanceResp;
-import com.ipipv.open.dto.AppProductAreaReq;
-import com.ipipv.open.dto.AppProductAreaResp;
-import com.ipipv.open.dto.AppProxyInfoReq;
-import com.ipipv.open.dto.AppProxyInfoResp;
-import com.ipipv.open.dto.AppProxyUserReq;
-import com.ipipv.open.dto.AppProxyUserResp;
-import com.ipipv.open.dto.AppUserReq;
+import com.ipipv.open.dto.*;
 
 
 
@@ -55,6 +21,12 @@ public class IpvCliestTest {
         String appKey = "AK20240708150154";
         String appSecret = "xx1vsogzzvqvrgml7f6sc233p8vdqev2";
         ipv = new IpvClient(endPoint, appKey, appSecret);
+    }
+
+    @Test
+    void testGetAppInfo() throws Exception{
+        AppInfoResp resp = ipv.getAppInfo();
+        System.out.println(resp);
     }
 
     @Test
