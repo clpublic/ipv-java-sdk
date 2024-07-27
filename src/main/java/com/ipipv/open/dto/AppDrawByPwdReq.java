@@ -7,6 +7,7 @@ public class AppDrawByPwdReq {
     private int num;          //数量 默认1
     private int proxyType;    //代理类型 104=动态国外 105=动态国内
     private int maxFlowLimit; //子账号最大流量限制 可选 大于0的时候生效
+    private String productNo; //产品编号
 
     public String getAppUsername() {
         return appUsername;
@@ -54,5 +55,13 @@ public class AppDrawByPwdReq {
 
     public void setMaxFlowLimit(int maxFlowLimit) {
         this.maxFlowLimit = maxFlowLimit;
+    }
+
+    public String getProductNo() {
+        return productNo;
+    }
+
+    public void setProductNo(String productNo) {
+        this.productNo = productNo;
     }
 }

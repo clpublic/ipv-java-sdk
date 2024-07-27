@@ -25,6 +25,7 @@ public class AppInstanceResp {
     private Date openAt;    //开通时间
     private Date renewAt;   //最后成功续费时间
     private Date releaseAt; //释放成功时间
+    private String productNo; //产品编号
 
     public String getInstanceNo() {
         return instanceNo;
@@ -192,5 +193,13 @@ public class AppInstanceResp {
 
     public void setReleaseAt(Date releaseAt) {
         this.releaseAt = releaseAt;
+    }
+
+    public String getProductNo() {
+        return productNo;
+    }
+
+    public void setProductNo(String productNo) {
+        this.productNo = productNo;
     }
 }

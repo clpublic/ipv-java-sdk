@@ -9,9 +9,18 @@ public class AppDrawByApiReq {
     private String returnType;   //数据格式 可选 默认txt  取值 txt json 之一
     private int delimiter;    //分隔符 可选 只有数据格式是txt的时候生效 默认1 (1=\r\n 2=/br 3=\r 4=\n 5=\t)
     private int maxFlowLimit; //最大流量限制 可选 大于0的时候生效
+    private String productNo; //产品编号
 
     public int getProxyType() {
         return proxyType;
+    }
+
+    public String getProductNo() {
+        return productNo;
+    }
+
+    public void setProductNo(String productNo) {
+        this.productNo = productNo;
     }
 
     public void setProxyType(int proxyType) {
