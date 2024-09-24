@@ -38,6 +38,8 @@ public class IpvClient {
     private static final String DEL_IP_WHITE_LIST_URI = "/api/open/app/proxy/delIpWhiteList/" + VERSION;
     private static final String DRAW_BY_API_URI = "/api/open/app/proxy/draw/api/" + VERSION;
     private static final String PROXY_FLOW_USE_LOG_URI = "/api/open/app/proxy/flow/use/log/" + VERSION;
+    private static final String PROXY_RETURN_URI = "/api/open/app/proxy/return/" + VERSION;
+
  
 
     public static final String ENCRYPT_AES = "AES";
@@ -116,6 +118,14 @@ public class IpvClient {
         return list;
     }
 
+    public List<AppCityAreaResp> getcityArea(AppCityAreaReq req) throws Exception {
+        byte[] params = JSON.toJSONBytes(req);
+        byte[] res = post(GET_AREA_URI, params);
+        System.out.println(new String(res));
+        List<AppCityAreaResp> list = JSON.parseArray(new String(res), AppCityAreaResp.class);
+        return list;
+    }
+
     public AppOrderResp instanceOpen(AppInstanceOpenReq req) throws Exception {
         byte[] params = JSON.toJSONBytes(req);
         byte[] res = post(INSTANCE_OPEN_URI, params);
@@ -176,6 +186,13 @@ public class IpvClient {
         byte[] params = JSON.toJSONBytes(req);
         byte[] res = post(PROXY_FLOW_USE_LOG_URI, params);
         AppFlowUseLogResp resp = JSON.parseObject(new String(res), AppFlowUseLogResp.class);
+        return resp;
+    }
+
+    public AppFlowReturnResp proxyReturn(AppFlowReturnReq req) throws Exception {
+        byte[] params = JSON.toJSONBytes(req);
+        byte[] res = post(PROXY_RETURN_URI, params);
+        AppFlowReturnResp resp = JSON.parseObject(new String(res), AppFlowReturnResp.class);
         return resp;
     }
 

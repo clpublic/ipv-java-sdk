@@ -1,6 +1,5 @@
 package com.ipipv.open;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,14 +8,12 @@ import org.junit.jupiter.api.Test;
 
 import com.ipipv.open.dto.*;
 
-
-
 public class IpvCliestTest {
 
-    IpvClient ipv ;
+    IpvClient ipv;
 
-    @BeforeEach  
-    public void before() {  
+    @BeforeEach
+    public void before() {
         String endPoint = "https://sandbox.ipipv.com";
         String appKey = "AK20240708150154";
         String appSecret = "xx1vsogzzvqvrgml7f6sc233p8vdqev2";
@@ -24,27 +21,34 @@ public class IpvCliestTest {
     }
 
     @Test
-    void testGetAppInfo() throws Exception{
+    void testGetAppInfo() throws Exception {
         AppInfoResp resp = ipv.getAppInfo();
         System.out.println(resp);
     }
 
     @Test
-    void testGetArea() throws Exception{
+    void testGetArea() throws Exception {
         AppGetAreaReq req = new AppGetAreaReq();
         List<AppAreaResp> resp = ipv.getArea(req);
         System.out.println(resp);
     }
 
     @Test
-    void testGetProductStock() throws Exception{
+    void testGetCityArea() throws Exception {
+        AppCityAreaReq req = new AppCityAreaReq();
+        List<AppCityAreaResp> resp = ipv.getcityArea(req);
+        System.out.println(resp);
+    }
+
+    @Test
+    void testGetProductStock() throws Exception {
         AppProductSyncReq req = new AppProductSyncReq();
         List<AppProductSyncResp> resp = ipv.getProductStock(req);
         System.out.println(resp);
     }
 
     @Test
-    void testDelIpWhiteList() throws Exception{
+    void testDelIpWhiteList() throws Exception {
         AppDelIpWhiteListReq req3 = new AppDelIpWhiteListReq();
         req3.setAppUsername("aaa");
         req3.setIp("127.0.0.1");
@@ -53,10 +57,10 @@ public class IpvCliestTest {
     }
 
     @Test
-    void testInstanceOpen() throws Exception{
+    void testInstanceOpen() throws Exception {
         AppInstanceOpenReq req = new AppInstanceOpenReq();
         req.setAppOrderNo(Tool.getOrder());
-        List<OpenParam> params =new ArrayList<>();
+        List<OpenParam> params = new ArrayList<>();
         OpenParam param = new OpenParam();
         param.setCount(1);
         param.setProductNo("ali_460");
@@ -68,14 +72,14 @@ public class IpvCliestTest {
     }
 
     @Test
-    void testAddIpWhiteList() throws Exception{
+    void testAddIpWhiteList() throws Exception {
         AppAddIpWhiteListReq req3 = new AppAddIpWhiteListReq();
         req3.setAppUsername("aaa");
         req3.setIp("127.0.0.1");
         AppAddIpWhiteListResp resp3 = ipv.addIpWhiteList(req3);
         System.out.println(resp3);
     }
-    
+
     @Test
     void testUserAuth() throws Exception {
         AppAuthUserReq req = new AppAuthUserReq();
@@ -86,7 +90,7 @@ public class IpvCliestTest {
     }
 
     @Test
-    void testcreateUser() throws Exception{
+    void testcreateUser() throws Exception {
         AppUserReq req = new AppUserReq();
         req.setAppUsername("abab123");
         req.setPassword("abab");
@@ -131,6 +135,15 @@ public class IpvCliestTest {
     }
 
     @Test
+    void testproxyReturn() throws Exception {
+        AppFlowReturnReq req = new AppFlowReturnReq();
+        req.setAppUsername("abab123");
+        req.setProxyType(104);
+        AppFlowReturnResp resp = ipv.proxyReturn(req);
+        System.out.println(resp);
+    }
+
+    @Test
     void testgetInstance() throws Exception {
         AppGetInstanceReq req = new AppGetInstanceReq();
         req.setInstances(null);
@@ -146,8 +159,8 @@ public class IpvCliestTest {
         System.out.println(resp);
     }
 
-    @Test 
-    void testGetOrder() throws Exception{
+    @Test
+    void testGetOrder() throws Exception {
         AppGetOrderReq req = new AppGetOrderReq();
         req.setOrderNo("1234");
         AppOrderResp resp = ipv.getOrder(req);
@@ -155,7 +168,7 @@ public class IpvCliestTest {
     }
 
     @Test
-    void testinstanceRelease() throws Exception{
+    void testinstanceRelease() throws Exception {
         AppInstanceReleaseReq req = new AppInstanceReleaseReq();
         req.setOrderNo("1234");
         req.setInstances(null);
@@ -164,7 +177,7 @@ public class IpvCliestTest {
     }
 
     @Test
-    void testproductAreaList() throws Exception{
+    void testproductAreaList() throws Exception {
         AppProductAreaReq req = new AppProductAreaReq();
         req.setProductNo("a123456");
         req.setProxyType(104);
@@ -173,7 +186,7 @@ public class IpvCliestTest {
     }
 
     @Test
-    void testproxyInfo() throws Exception{
+    void testproxyInfo() throws Exception {
         AppProxyInfoReq req = new AppProxyInfoReq();
         req.setUsername("abab");
         req.setProxyType(104);
@@ -182,7 +195,7 @@ public class IpvCliestTest {
     }
 
     @Test
-    void testcreateProxyUser() throws Exception{
+    void testcreateProxyUser() throws Exception {
         AppProxyUserReq req = new AppProxyUserReq();
         req.setLimitFlow(1000);
         req.setMainUsername("abab");

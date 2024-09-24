@@ -1,8 +1,8 @@
 package com.ipipv.open.dto;
 
 public class AppUserReq {
-    private String appUsername;  //渠道商主账号 该渠道商唯一 不支持修改
-    private String password;    //主账号密码(不传随机生成)
+    private String appUsername;  //渠道商主账号 该渠道商唯一 不支持修改(不传随机生成，建议不传)
+    private String password;    //主账号密码(不传随机生成，建议不传)
     private String phone;       //主账号手机号
     private String email;       //主账号邮箱
     private int authType;    //认证类型 1=未实名 2=个人实名 3=企业实名

@@ -12,6 +12,7 @@ public class OpenParam {
     private int ispType; // isp类型 1=单isp 2=双isp
     private int count; // 购买数量 （实例个数）静态必填 默认1 一次最大20
     private int duration; // 必要 时长 默认1 为Unit的时长
+    private int cycleTimes;//购买时长周期数，此字段对有时长的产品有意义，默认1表示产品的时长
     private boolean renew; // 是否续费 1续费 默认0
     private int extBandWidth;// 额外增加带宽 单位Mbps
     private String appUsername;// 渠道商主账号，开通动态代理的时候必填(必须在平台上注册过)
@@ -90,6 +91,14 @@ public class OpenParam {
 
     public void setDuration(int duration) {
         this.duration = duration;
+    }
+
+    public int getCycleTimes() {
+        return cycleTimes;
+    }
+
+    public void setCycleTimes(int cycleTimes) {
+        this.cycleTimes = cycleTimes;
     }
 
     public boolean isRenew() {

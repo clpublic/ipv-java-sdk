@@ -1,11 +1,11 @@
 package com.ipipv.open.dto;
 
 public class AppOpenReq {
-    private String reqId;
+    private String reqId; // 请求id，每次生成，如果失败重复请求，保持不变
     private String version; // 版本 v2
     private String encrypt; // 加密方式 aes,rsa（版本2以上提供，默认aes,老接口rsa）aes cbc模式
-    private String appKey;  // appKey
-    private String params;  // 根据加密方式密文 转base64
+    private String appKey; // appKey 渠道商号 找我方获取
+    private String params; // 根据加密方式密文 转base64
 
     public AppOpenReq() {
 

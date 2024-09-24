@@ -5,6 +5,7 @@ public class AppFlowUseLogItem {
     private int total; // 总流量 B
     private int balance; // 剩余流量 B
     private int usedTime; // 使用时间 单位秒
+    private String productNo; // 产品编号
 
     public int getUsed() {
         return used;
@@ -36,5 +37,13 @@ public class AppFlowUseLogItem {
 
     public void setUsedTime(int usedTime) {
         this.usedTime = usedTime;
+    }
+
+    public String getProductNo() {
+        return productNo;
+    }
+
+    public void setProductNo(String productNo) {
+        this.productNo = productNo;
     }
 }
