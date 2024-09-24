@@ -1,22 +1,22 @@
 package com.ipipv.open.dto;
 
 public class Instance {
-    private String InstanceNo;//
-    private int Duration;
+    private String instanceNo;//平台实例编号
+    private int duration;//可选 时长 默认1
 
     public String getInstanceNo() {
-        return InstanceNo;
+        return instanceNo;
     }
 
     public void setInstanceNo(String instanceNo) {
-        InstanceNo = instanceNo;
+        this.instanceNo = instanceNo;
     }
 
     public int getDuration() {
-        return Duration;
+        return duration;
     }
 
     public void setDuration(int duration) {
-        Duration = duration;
+        this.duration = duration;
     }
 }

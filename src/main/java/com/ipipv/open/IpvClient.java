@@ -13,10 +13,8 @@ import org.apache.http.message.BasicHeader;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 
-
 import java.util.Base64;
 import java.util.List;
-
 
 public class IpvClient {
     private static final String VERSION = "v2";
@@ -38,9 +36,8 @@ public class IpvClient {
     private static final String DEL_IP_WHITE_LIST_URI = "/api/open/app/proxy/delIpWhiteList/" + VERSION;
     private static final String DRAW_BY_API_URI = "/api/open/app/proxy/draw/api/" + VERSION;
     private static final String PROXY_FLOW_USE_LOG_URI = "/api/open/app/proxy/flow/use/log/" + VERSION;
+    private static final String GET_CITY_LIST_URI = "/api/open/app/city/list/" + VERSION;
     private static final String PROXY_RETURN_URI = "/api/open/app/proxy/return/" + VERSION;
-
- 
 
     public static final String ENCRYPT_AES = "AES";
 
@@ -66,7 +63,6 @@ public class IpvClient {
         List<AppProductSyncResp> list = JSON.parseArray(new String(res), AppProductSyncResp.class);
         return list;
     }
-
 
     public AppCreateUserResp createUser(AppUserReq req) throws Exception {
         byte[] params = JSON.toJSONBytes(req);
@@ -115,14 +111,6 @@ public class IpvClient {
         byte[] res = post(GET_AREA_URI, params);
         System.out.println(new String(res));
         List<AppAreaResp> list = JSON.parseArray(new String(res), AppAreaResp.class);
-        return list;
-    }
-
-    public List<AppCityAreaResp> getcityArea(AppCityAreaReq req) throws Exception {
-        byte[] params = JSON.toJSONBytes(req);
-        byte[] res = post(GET_AREA_URI, params);
-        System.out.println(new String(res));
-        List<AppCityAreaResp> list = JSON.parseArray(new String(res), AppCityAreaResp.class);
         return list;
     }
 
@@ -189,6 +177,14 @@ public class IpvClient {
         return resp;
     }
 
+    public List<AppCityAreaResp> getcityArea(AppCityAreaReq req) throws Exception {
+        byte[] params = JSON.toJSONBytes(req);
+        byte[] res = post(GET_CITY_LIST_URI, params);
+        System.out.println(new String(res));
+        List<AppCityAreaResp> list = JSON.parseArray(new String(res), AppCityAreaResp.class);
+        return list;
+    }
+
     public AppFlowReturnResp proxyReturn(AppFlowReturnReq req) throws Exception {
         byte[] params = JSON.toJSONBytes(req);
         byte[] res = post(PROXY_RETURN_URI, params);
@@ -198,48 +194,46 @@ public class IpvClient {
 
     private byte[] post(String uri, byte[] data) throws Exception {
         byte[] resdata = new byte[0];
-        //创建httpclient对象
+        // 创建httpclient对象
         CloseableHttpClient client = HttpClients.createDefault();
-        //创建post方式请求对象
+        // 创建post方式请求对象
         HttpPost httpPost = new HttpPost(endPoint + uri);
         byte[] iv = appSecret.substring(0, 16).getBytes();
         String msg = "";
-        if (data !=null && data.length>0){
+        if (data != null && data.length > 0) {
             byte[] key = appSecret.getBytes();
             byte[] en = AESCBC.encryptCBC(data, key, iv);
             msg = Base64.getEncoder().encodeToString(en);
         }
         AppOpenReq req = new AppOpenReq("" + System.currentTimeMillis(), "2.0", ENCRYPT_AES, appKey, msg);
 
-        //装填参数
+        // 装填参数
         StringEntity s = new StringEntity(JSON.toJSONString(req), "utf-8");
         s.setContentEncoding(new BasicHeader(HTTP.CONTENT_TYPE,
                 "application/json"));
-        //设置参数到请求对象中
+        // 设置参数到请求对象中
         httpPost.setEntity(s);
         System.out.println("请求地址：" + endPoint + uri);
         httpPost.setHeader("Content-type", "application/json");
 
-        //执行请求操作，并拿到结果（同步阻塞）
+        // 执行请求操作，并拿到结果（同步阻塞）
         CloseableHttpResponse response = client.execute(httpPost);
-        //获取结果实体
+        // 获取结果实体
         HttpEntity entity = response.getEntity();
         if (entity != null) {
             String js = EntityUtils.toString(entity, "utf-8");
-            //System.out.println(js);
+            // System.out.println(js);
             Res res = JSON.parseObject(js, Res.class);
             if (res.getCode() == 200) {
                 byte[] de = Base64.getDecoder().decode(res.getData());
                 resdata = AESCBC.decryptCBC(de, appSecret.getBytes(), iv);
             }
-            //按指定编码转换结果实体为String类型
+            // 按指定编码转换结果实体为String类型
         }
         EntityUtils.consume(entity);
-        //释放链接
+        // 释放链接
         response.close();
         return resdata;
     }
 
 }
-
-

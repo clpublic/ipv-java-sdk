@@ -6,7 +6,7 @@ public class AppInfoResp {
     private String coin; // 余额
     private int useBridge; // 使用桥 1 不使用 2使用
     private String callbackUrl; // 回调地址
-    //private String credit;// 授信额度
+    private String credit;// 授信额度
     private int status;// 1正常 -1禁用
     public String getAppName() {
         return appName;
@@ -32,12 +32,12 @@ public class AppInfoResp {
     public void setCallbackUrl(String callbackUrl) {
         this.callbackUrl = callbackUrl;
     }
-    /*public String getCredit() {
+    public String getCredit() {
         return credit;
     }
     public void setCredit(String credit) {
         this.credit = credit;
-    }*/
+    }
     public int getStatus() {
         return status;
     }
