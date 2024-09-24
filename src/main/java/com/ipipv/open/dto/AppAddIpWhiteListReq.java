@@ -4,6 +4,7 @@ public class AppAddIpWhiteListReq {
     private String appUsername; //渠道商主账号 必要
     private String ip;          //ip地址 必要
     private int proxyType;   //代理类型 可选 默认104 104=动态国外 105=动态国内
+    private int productNo;   //产品编号
 
     public String getAppUsername() {
         return appUsername;
@@ -27,5 +28,13 @@ public class AppAddIpWhiteListReq {
 
     public void setProxyType(int proxyType) {
         this.proxyType = proxyType;
+    }
+
+    public int getProductNo() {
+        return productNo;
+    }
+
+    public void setProductNo(int productNo) {
+        this.productNo = productNo;
     }
 }

@@ -9,6 +9,7 @@ public class AppProductAreaResp {
     private String cityCode;   //城市代码
     private int status;     //状态 1=上架 -1=下架
     private String region;     //上游供应商区域
+    private String supplierCode;     //上游供应商代码
 
     public String getProductNo() {
         return productNo;
@@ -72,5 +73,13 @@ public class AppProductAreaResp {
 
     public void setRegion(String region) {
         this.region = region;
+    }
+
+    public String getSupplierCode() {
+        return supplierCode;
+    }
+
+    public void setSupplierCode(String supplierCode) {
+        this.supplierCode = supplierCode;
     }
 }
